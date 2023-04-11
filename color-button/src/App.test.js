@@ -1,5 +1,5 @@
 import {render, screen, fireEvent} from '@testing-library/react';
-import App from './App';
+import App, {replaceCameWidth} from './App';
 
 test('button has correct initial color', () => {
   render(<App/>)
@@ -30,3 +30,12 @@ test('button has correct initial color', () => {
     expect(checkbox).toBeChecked()
 
   })
+
+describe('space before cc cap. letters', () => {
+  test('Work for inner letters', () => {
+    expect(replaceCameWidth('Red')).toBe('Red')
+  })
+  test('Work one inner letters', () => {
+    expect(replaceCameWidth('Blue')).toBe('Blue')
+  })
+})

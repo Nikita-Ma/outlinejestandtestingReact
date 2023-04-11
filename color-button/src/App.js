@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import {useState} from "react";
+export function replaceCameWidth(cN) {
+    return cN.replace(/\B(A-Z)\B/g, ' $1')
+}
 
 function App() {
     const [buttonColor, setButtonColor] = useState('red');
