@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import {fireEvent, render, screen} from '@testing-library/react';
 import App from './App';
+import FormCheckInput from "react-bootstrap/FormCheckInput";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+test('check input on checked', () => {
+  render(<App/>)
+  const checkbox = screen.getByRole('checkbox')
+  expect(checkbox).not.toBeChecked()
+  fireEvent.click(checkbox)
+  expect(checkbox).toBeEnabled()
+})
