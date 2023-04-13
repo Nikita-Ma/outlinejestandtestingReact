@@ -1,5 +1,5 @@
 import {render, screen, fireEvent} from '@testing-library/react';
-import App, {replaceCameWidth} from './App';
+import App, {replaceCameWidth, replaceCameWidthDouble} from './App';
 
 test('button has correct initial color', () => {
   render(<App/>)
@@ -37,5 +37,8 @@ describe('space before cc cap. letters', () => {
   })
   test('Work one inner letters', () => {
     expect(replaceCameWidth('Blue')).toBe('Blue')
+  })
+  test('Double', ()=>{
+    expect(replaceCameWidthDouble('Ex')).toBe('Ex')
   })
 })

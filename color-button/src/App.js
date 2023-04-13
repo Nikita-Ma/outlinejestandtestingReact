@@ -4,6 +4,9 @@ import {useState} from "react";
 export function replaceCameWidth(cN) {
     return cN.replace(/\B(A-Z)\B/g, ' $1')
 }
+export function replaceCameWidthDouble(q) {
+    return q
+}
 
 function App() {
     const [buttonColor, setButtonColor] = useState('red');
